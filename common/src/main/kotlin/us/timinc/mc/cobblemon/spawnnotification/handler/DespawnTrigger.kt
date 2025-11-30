@@ -1,5 +1,6 @@
 package us.timinc.mc.cobblemon.spawnnotification.handler
 
+import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.api.scheduling.afterOnServer
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import net.minecraft.server.level.ServerLevel
@@ -19,6 +20,9 @@ object DespawnTrigger : AbstractHandler<EntityUnloadEvent<PokemonEntity>>() {
         if (!pokemon.isWild()) return
         if (SpawnNotification.CUSTOM_POKEMON_PROPERTIES.BROADCASTED_DESPAWN.pokemonMatcher(pokemon, true)) return
 
+        val removalReason = evt.entity.removalReason ?: return
+        if (!(removalReason.shouldDestroy() || (removalReason.shouldSave() && !Cobblemon.config.savePokemonToWorld))) return
+
         Broadcaster.broadcast(
             BroadcastContext(
                 pokemon,
@@ -27,5 +31,6 @@ object DespawnTrigger : AbstractHandler<EntityUnloadEvent<PokemonEntity>>() {
             ),
             SpawnNotification.KEYS.TRIGGERS.DESPAWNED
         )
+        SpawnNotification.CUSTOM_POKEMON_PROPERTIES.BROADCASTED_DESPAWN.pokemonApplicator(pokemon, true)
     }
 }

@@ -1,6 +1,6 @@
 {
   "matcher": ["shiny"],
-  "antiMatcher": ["labels=legendary,mythical,paradox,ultra_beast"],
+  "antiMatcher": ["labels=legendary,mythical,paradox,ultra_beast any_label"],
   "destination": "spawn_notification:chat",
   "triggers": [
     "spawn_notification:despawned"

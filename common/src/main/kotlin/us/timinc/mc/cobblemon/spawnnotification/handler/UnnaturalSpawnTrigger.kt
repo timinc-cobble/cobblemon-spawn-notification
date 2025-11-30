@@ -15,6 +15,7 @@ object UnnaturalSpawnTrigger : AbstractHandler<EntityLoadEvent<PokemonEntity>>()
     }
 
     fun handleLater(evt: EntityLoadEvent<PokemonEntity>) {
+        if (!evt.entity.pokemon.isWild()) return
         if (SpawnNotification.CUSTOM_POKEMON_PROPERTIES.BROADCASTED_SPAWN.entityMatcher(evt.entity, true)) return
         Broadcaster.broadcast(
             BroadcastContext(
