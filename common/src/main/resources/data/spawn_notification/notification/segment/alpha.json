@@ -1,0 +1,17 @@
+{
+  "type": "spawn_notification:full",
+  "conditions": [
+    {
+      "type": "spawn_notification:matcher",
+      "matcher": [
+        "alpha=true"
+      ]
+    }
+  ],
+  "segments": {
+    "1": {
+      "type": "spawn_notification:full",
+      "message": "spawn_notification.alpha"
+    }
+  }
+}

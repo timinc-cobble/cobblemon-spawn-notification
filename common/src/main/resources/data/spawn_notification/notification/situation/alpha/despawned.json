@@ -1,0 +1,16 @@
+{
+  "triggers": [
+    "spawn_notification:despawned"
+  ],
+  "conditions": [
+    {
+      "type": "spawn_notification:matcher",
+      "matcher": [
+        "alpha=true"
+      ]
+    }
+  ],
+  "otherSituations": [
+    "spawn_notification:special/despawned"
+  ]
+}
