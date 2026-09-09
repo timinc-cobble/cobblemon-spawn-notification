@@ -17,8 +17,9 @@ interface PlayerSpecific {
     ): Iterable<ServerPlayer> {
         if (broadcastAcrossDimensions) return world.server.playerList.players
 
+        val broadcastRangeSquared = broadcastRange.toDouble() * broadcastRange.toDouble()
         val eligiblePlayers = if (broadcastRange <= 0) world.players() else world.getPlayers { player ->
-            player.distanceToSqr(position) <= broadcastRange
+            player.distanceToSqr(position) <= broadcastRangeSquared
         }
 
         if (playerLimit > 0) {

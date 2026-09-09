@@ -1,0 +1,16 @@
+{
+  "triggers": [
+    "spawn_notification:snacked"
+  ],
+  "conditions": [
+    {
+      "type": "spawn_notification:matcher",
+      "matcher": [
+        "alpha=true"
+      ]
+    }
+  ],
+  "otherSituations": [
+    "spawn_notification:special/snacked"
+  ]
+}

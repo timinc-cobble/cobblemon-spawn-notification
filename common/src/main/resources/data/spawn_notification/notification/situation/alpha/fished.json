@@ -1,16 +1,16 @@
 {
   "triggers": [
-    "spawn_notification:resurrected"
+    "spawn_notification:fished"
   ],
   "conditions": [
     {
       "type": "spawn_notification:matcher",
       "matcher": [
-        "buckets=ultra-rare"
+        "alpha=true"
       ]
     }
   ],
   "otherSituations": [
-    "spawn_notification:special/resurrected"
+    "spawn_notification:special/fished"
   ]
 }
