@@ -1,6 +1,6 @@
 # Spawn Notification
 
-v1.7.3-2.3
+v1.8.0-2.3
 
 [Modrinth](https://modrinth.com/mod/cobblemon-spawn-notification)
 
@@ -26,8 +26,16 @@ v1.7.3-2.3
     - A player resurrecting a Pokémon
     - A wild Pokémon having spawned from eating a snack
     - A wild Pokémon having spawned (includes command and other “unnatural” spawning)
+- Has the following filters out of the box:
+    - Alpha Pokémon
+    - Shiny Pokémon
+    - Legendary/Mythical Pokémon
+    - Ultra Beasts
+    - Paradox Pokémon
+    - Pokémon that spawned from the Ultra Rare bucket
+- Also notifies about any of the above with perfect IVs out of the box.
 - Makes use of PokemonMatcher from Tim Core to match on labels, buckets, max IVs, and more!
-- Highly configurable with addons to accommodate special Pokémon from addons and mods.
+- Highly configurable with addons to accommodate special Pokémon from addons and mods. Join [the Discord](https://discord.com/invite/WKAR27SdSv) for some pre-mades!
 
 ## Dependencies
 
@@ -58,9 +66,7 @@ As a quick test, jump into a world where you have OP powers, and run `/pokespawn
 
 ## Known Issues
 
-- v1.7.1-2.2.0 was missing the wildcard logic for `disabledSituations`. v1.7.1-2.2.1 remedied this.
-- ≤v1.7.1-2.2.1 would break messages with fixed message templates if the full segment list wasn’t preserved, on NeoForge. v1.7.1-2.2.2 remedied this.
-- ≤v1.7.1-2.2.1 wouldn’t update whether or not a situation was disabled unless you reloaded the data, even though you can change that in the config. v1.7.1-2.2.2 remedied this.
+- None. Yet. 👀 Why? Who's asking?
 
 ## Roadmap
 
