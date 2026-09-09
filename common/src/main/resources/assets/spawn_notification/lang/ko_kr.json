@@ -1,0 +1,30 @@
+{
+  "spawn_notification.notification.spawned": "%1$s%2$s이(가) 스폰되었습니다%3$s!",
+  "spawn_notification.notification.fished": "%1$s%2$s이(가) 낚였습니다%3$s!",
+  "spawn_notification.notification.snacked": "%1$s%2$s이(가) 간식을 찾았습니다%3$s!",
+  "spawn_notification.notification.captured": "%1$s%2$s이(가) 포획되었습니다%3$s!",
+  "spawn_notification.notification.fainted": "%1$s%2$s이(가) 기절했습니다%3$s!",
+  "spawn_notification.notification.died": "%1$s%2$s이(가) 처치되었습니다%3$s!",
+  "spawn_notification.notification.despawned": "%1$s%2$s이(가) 디스폰되었습니다%3$s!",
+  "spawn_notification.notification.resurrected": "%1$s%2$s이(가) 부활했습니다%3$s!",
+  "spawn_notification.notification.hatched": "%1$s%2$s이(가) 부화했습니다%3$s!",
+
+  "spawn_notification.labels.legendary": "§d전설§r",
+  "spawn_notification.labels.mythical": "§b신화§r",
+  "spawn_notification.labels.ultra_beast": "§c울트라비스트§r",
+  "spawn_notification.labels.paradox": "§a패러독스§r",
+  "spawn_notification.shiny": "§6이로치§r",
+  "spawn_notification.max_ivs": "§9최대 IV§r",
+
+  "spawn_notification.segments.biome": "%1$s 생물군계에서",
+  "spawn_notification.segments.coordinates": "%1$s에서",
+  "spawn_notification.segments.dimension": "%1$s에서",
+  "spawn_notification.segments.player": "%1$s에 의해",
+
+  "spawn_notification.parts.coords": "%1$s, %2$s, %3$s",
+  "spawn_notification.parts.player.unknown": "누군가",
+
+  "dimension.minecraft.overworld": "오버월드",
+  "dimension.minecraft.the_nether": "네더",
+  "dimension.minecraft.the_end": "엔드"
+}
