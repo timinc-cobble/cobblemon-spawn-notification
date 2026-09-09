@@ -13,7 +13,7 @@
   "spawn_notification.labels.mythical": "§bMythical§r",
   "spawn_notification.labels.ultra_beast": "§cUltra Beast§r",
   "spawn_notification.labels.paradox": "§aParadox§r",
-  "spawn_notification.alpha": "Alpha",
+  "spawn_notification.alpha": "§eAlpha§r",
   "spawn_notification.shiny": "§6Shiny§r",
   "spawn_notification.max_ivs": "§9Max IV§r",
 
