@@ -221,13 +221,13 @@ object SpawnNotification :
         registerReloadListener(SegmentAdditionDataManager)
         registerReloadListener(BroadcastDataManager)
 
-        TimCoreEvents.POKEMON_ENTITY_DID_SPAWN.subscribe(Priority.NORMAL, SpawnTriggers::handle)
+        TimCoreEvents.POKEMON_ENTITY_DID_SPAWN.subscribe(Priority.LOWEST, SpawnTriggers::handle)
         TimCoreEvents.POKEMON_ENTITY_LOAD.subscribe(Priority.LOWEST, UnnaturalSpawnTrigger::handle)
-        TimCoreEvents.POKEMON_ENTITY_UNLOAD.subscribe(Priority.NORMAL, DespawnTrigger::handle)
-        CobblemonEvents.POKEMON_CAPTURED.subscribe(Priority.NORMAL, CaptureTrigger::handle)
-        CobblemonEvents.POKEMON_FAINTED.subscribe(Priority.NORMAL, DieTrigger::handle)
-        CobblemonEvents.BATTLE_FAINTED.subscribe(Priority.NORMAL, FaintTrigger::handle)
-        CobblemonEvents.FOSSIL_REVIVED.subscribe(Priority.NORMAL, ResurrectTrigger::handle)
-        CobblemonEvents.HATCH_EGG_POST.subscribe(Priority.NORMAL, HatchTrigger::handle)
+        TimCoreEvents.POKEMON_ENTITY_UNLOAD.subscribe(Priority.LOWEST, DespawnTrigger::handle)
+        CobblemonEvents.POKEMON_CAPTURED.subscribe(Priority.LOWEST, CaptureTrigger::handle)
+        CobblemonEvents.POKEMON_FAINTED.subscribe(Priority.LOWEST, DieTrigger::handle)
+        CobblemonEvents.BATTLE_FAINTED.subscribe(Priority.LOWEST, FaintTrigger::handle)
+        CobblemonEvents.FOSSIL_REVIVED.subscribe(Priority.LOWEST, ResurrectTrigger::handle)
+        CobblemonEvents.HATCH_EGG_POST.subscribe(Priority.LOWEST, HatchTrigger::handle)
     }
 }
