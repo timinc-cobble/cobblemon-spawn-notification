@@ -44,6 +44,8 @@ object SpawnNotification :
         val broadcastRange: Int = -1
         val playerLimit: Int = -1
         val broadcastAcrossDimensions: Boolean = false
+        val dimensionBlacklist: Set<String> = setOf()
+        val dimensionWhitelist: Set<String> = setOf()
         val actionBar: Boolean = false
         val baseColor: String = ChatFormatting.GRAY.name
         val partColors: Map<String, String> = mapOf(
