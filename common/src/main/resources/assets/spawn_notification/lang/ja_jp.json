@@ -1,0 +1,31 @@
+{
+  "spawn_notification.notification.spawned": "%1$s%2$sが %3$sに 現れた！",
+  "spawn_notification.notification.fished": "%3$s 釣り上がった %1$s%2$sが 現れた！",
+  "spawn_notification.notification.snacked": "ポケモンスナックに つられた %1$s%2$sが %3$sに 現れた！",
+  "spawn_notification.notification.captured": "%1$s%2$sは %3$s ゲットされた！",
+  "spawn_notification.notification.fainted": "%1$s%2$sは %3$s バトルで 倒されたようだ",
+  "spawn_notification.notification.died": "%1$s%2$sは %3$s 攻撃を受けて 倒された...",
+  "spawn_notification.notification.despawned": "%1$s%2$sは %3$s 姿を消した...",
+  "spawn_notification.notification.resurrected": "%1$s%2$sは %3$s 復元された！",
+  "spawn_notification.notification.hatched": "%1$s%2$sは %3$s タマゴから 孵った！",
+
+  "spawn_notification.labels.legendary": "§d伝説のポケモン§r",
+  "spawn_notification.labels.mythical": "§b幻のポケモン§r",
+  "spawn_notification.labels.ultra_beast": "§cウルトラビースト§r",
+  "spawn_notification.labels.paradox": "§aパラドックス§r",
+  "spawn_notification.alpha": "§eオヤブン§r",
+  "spawn_notification.shiny": "§6色違い§r",
+  "spawn_notification.max_ivs": "§9最高個体値§r",
+
+  "spawn_notification.segments.biome": "%1$sバイオーム",
+  "spawn_notification.segments.coordinates": "%1$s",
+  "spawn_notification.segments.dimension": "%1$s",
+  "spawn_notification.segments.player": "%1$sによって",
+
+  "spawn_notification.parts.coords": "座標%1$s, %2$s, %3$s",
+  "spawn_notification.parts.player.unknown": "だれか",
+
+  "dimension.minecraft.overworld": "オーバーワールド",
+  "dimension.minecraft.the_nether": "ネザー",
+  "dimension.minecraft.the_end": "エンド"
+}
