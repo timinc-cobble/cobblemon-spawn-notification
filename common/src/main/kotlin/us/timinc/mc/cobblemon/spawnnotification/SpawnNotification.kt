@@ -46,6 +46,7 @@ object SpawnNotification :
         val broadcastAcrossDimensions: Boolean = false
         val dimensionBlacklist: Set<String> = setOf()
         val dimensionWhitelist: Set<String> = setOf()
+        val matcherBlacklist: Set<String> = setOf()
         val actionBar: Boolean = false
         val baseColor: String = ChatFormatting.GRAY.name
         val partColors: Map<String, String> = mapOf(

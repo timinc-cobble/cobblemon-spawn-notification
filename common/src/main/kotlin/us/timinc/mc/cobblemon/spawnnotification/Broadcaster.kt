@@ -5,6 +5,7 @@ import us.timinc.mc.cobblemon.spawnnotification.api.broadcast.BroadcastContext
 import us.timinc.mc.cobblemon.spawnnotification.data.BroadcastDataManager
 import us.timinc.mc.cobblemon.spawnnotification.data.SituationDataManager
 import us.timinc.mc.cobblemon.timcore.LimitedList
+import us.timinc.mc.cobblemon.timcore.PokemonMatcher
 
 object Broadcaster {
     fun broadcast(broadcastContext: BroadcastContext, trigger: ResourceLocation) {
@@ -13,6 +14,9 @@ object Broadcaster {
                 SpawnNotification.config.dimensionWhitelist,
                 SpawnNotification.config.dimensionBlacklist
             )) return
+        if (SpawnNotification.config.matcherBlacklist.any {
+                PokemonMatcher.parse(it).matches(broadcastContext.pokemon)
+            }) return
         if ((broadcastContext.player?.isSpectator ?: false) && SpawnNotification.config.ignoreSpectators) return
         val situations = SituationDataManager.findMatches(broadcastContext, trigger)
             .filter { situationId ->
