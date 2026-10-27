@@ -1,6 +1,6 @@
 # Spawn Notification
 
-v1.8.3-2.3
+v1.8.4-2.3
 
 [Modrinth](https://modrinth.com/mod/cobblemon-spawn-notification)
 
