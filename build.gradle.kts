@@ -23,10 +23,6 @@ allprojects {
         maven("https://maven.cobbled-creators.org/releases")
     }
 
-    tasks.getByName<Test>("test") {
-        useJUnitPlatform()
-    }
-
     java {
         withSourcesJar()
     }
@@ -66,6 +62,10 @@ subprojects {
     tasks {
         withType<GenerateModuleMetadata> {
             enabled = false
+        }
+
+        test {
+            useJUnitPlatform()
         }
     }
 }
