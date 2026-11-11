@@ -20,8 +20,6 @@ allprojects {
         mavenLocal() // to depend on local publications. they are located in $HOME/.m2
         mavenCentral()
         maven("https://maven.impactdev.net/repository/development/")
-        maven("https://maven.neoforged.net/releases")
-        maven("https://thedarkcolour.github.io/KotlinForForge/")
         maven("https://maven.cobbled-creators.org/releases")
     }
 
@@ -44,7 +42,7 @@ subprojects {
             create<MavenPublication>("mavenJava") {
                 artifact(tasks.getByName("remapJar"))
                 artifact(tasks.getByName("remapSourcesJar"))
-                groupId = "${group}.${rootProject.name}"
+                groupId = "${group}.spawnnotification"
                 artifactId = project.name
             }
         }

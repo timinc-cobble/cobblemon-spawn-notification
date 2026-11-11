@@ -15,12 +15,10 @@ loom {
 }
 
 repositories {
-    mavenCentral()
-    maven("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
-    maven("https://maven.impactdev.net/repository/development/")
     maven("https://hub.spigotmc.org/nexus/content/groups/public/")
     maven("https://thedarkcolour.github.io/KotlinForForge/")
-    maven("https://maven.neoforged.net")
+    maven("https://maven.neoforged.net/releases")
+    maven("https://maven.su5ed.dev/releases")
 }
 
 val shadowBundle = configurations.create("shadowBundle") {
@@ -48,7 +46,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
 
-    modImplementation("us.timinc.mc.cobblemon.cobblemon-tim-core:neoforge:${property("tim_core_version")}")
+    modImplementation("us.timinc.mc.cobblemon.timcore:neoforge:${property("tim_core_version")}")
 }
 
 tasks.getByName<Test>("test") {
@@ -73,6 +71,8 @@ tasks {
     sourcesJar {
         dependsOn(project(":common").tasks.named("sourcesJar"))
         from(project(":common").tasks.named<Jar>("sourcesJar").get().archiveFile.map { zipTree(it) })
+        archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
+        archiveVersion.set("${rootProject.version}")
     }
 
     shadowJar {

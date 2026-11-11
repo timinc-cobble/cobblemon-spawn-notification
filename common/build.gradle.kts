@@ -16,13 +16,20 @@ dependencies {
     mappings(loom.officialMojangMappings())
     modImplementation("com.cobblemon:mod:${property("cobblemon_version")}") { isTransitive = false }
 
-    modImplementation("us.timinc.mc.cobblemon.cobblemon-tim-core:common:${property("tim_core_version")}")
+    modImplementation("us.timinc.mc.cobblemon.timcore:common:${property("tim_core_version")}")
     modCompileOnly("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
 }
 
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
+tasks {
+    test {
+        useJUnitPlatform()
+    }
+
+    sourcesJar {
+        archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
+        archiveVersion.set("${rootProject.version}")
+    }
 }
