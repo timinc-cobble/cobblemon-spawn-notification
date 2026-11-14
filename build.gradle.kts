@@ -1,3 +1,5 @@
+import groovy.util.Node
+
 plugins {
     id("java")
     id("java-library")
@@ -38,32 +40,39 @@ subprojects {
             create<MavenPublication>("mavenJava") {
                 artifact(tasks.getByName("remapJar"))
                 artifact(tasks.getByName("remapSourcesJar"))
-                groupId = "${group}.spawnnotification"
+                groupId = "${group}.timcore"
                 artifactId = project.name
+
+                pom {
+                    withXml {
+                        val root: Node = asNode()
+                        (root.get("dependencies") as List<*>).forEach {
+                            root.remove(it as Node)
+                        }
+                    }
+                }
             }
         }
 
-        repositories {
-            maven {
-                // Set these variables in gh action secrets
-                if (System.getenv("CCM_USER") == null || System.getenv("CCM_PASS") == null) {
-                    throw RuntimeException("Did you forget your publication credentials?")
-                }
+        if (providers.environmentVariable("CCM_BUILD").orNull?.toBoolean() == true) {
+            repositories {
+                maven {
+                    // Set these variables in gh action secrets
+                    if (System.getenv("CCM_USER") == null || System.getenv("CCM_PASS") == null) {
+                        throw RuntimeException("Did you forget your publication credentials?")
+                    }
 
-                url = uri("https://maven.cobbled-creators.org/releases")
-                credentials {
-                    username = System.getenv("CCM_USER").toString()
-                    password = System.getenv("CCM_PASS").toString()
+                    url = uri("https://maven.cobbled-creators.org/releases")
+                    credentials {
+                        username = System.getenv("CCM_USER").toString()
+                        password = System.getenv("CCM_PASS").toString()
+                    }
                 }
             }
         }
     }
 
     tasks {
-        withType<GenerateModuleMetadata> {
-            enabled = false
-        }
-
         test {
             useJUnitPlatform()
         }

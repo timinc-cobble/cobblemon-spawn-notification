@@ -34,7 +34,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
 
-    modImplementation("us.timinc.mc.cobblemon.timcore:fabric:${property("tim_core_version")}")
+    modImplementation("us.timinc.mc.cobblemon.timcore:fabric:${property("tim_core_version")}") { isTransitive = false }
 
     // GraalVM runtime used by Cobblemon's Showdown service
     modRuntimeOnly("org.graalvm.sdk:graal-sdk:22.3.0")

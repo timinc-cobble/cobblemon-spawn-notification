@@ -16,7 +16,7 @@ dependencies {
     mappings(loom.officialMojangMappings())
     modImplementation("com.cobblemon:mod:${property("cobblemon_version")}") { isTransitive = false }
 
-    modImplementation("us.timinc.mc.cobblemon.timcore:common:${property("tim_core_version")}")
+    modImplementation("us.timinc.mc.cobblemon.timcore:common:${property("tim_core_version")}") { isTransitive = false }
     modCompileOnly("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")

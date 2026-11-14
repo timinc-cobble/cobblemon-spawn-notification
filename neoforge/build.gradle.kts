@@ -33,7 +33,7 @@ dependencies {
 
     modImplementation("com.cobblemon:neoforge:${property("cobblemon_version")}") { isTransitive = false }
     //Needed for cobblemon
-    forgeRuntimeLibrary("thedarkcolour:kotlinforforge-neoforge:${property("kotlin_for_forge_version")}") {
+    implementation("thedarkcolour:kotlinforforge-neoforge:${property("kotlin_for_forge_version")}") {
         exclude("net.neoforged.fancymodloader", "loader")
     }
 
@@ -46,7 +46,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
 
-    modImplementation("us.timinc.mc.cobblemon.timcore:neoforge:${property("tim_core_version")}")
+    modImplementation("us.timinc.mc.cobblemon.timcore:neoforge:${property("tim_core_version")}") { isTransitive = false }
 }
 
 tasks {
@@ -70,6 +70,8 @@ tasks {
     }
 
     shadowJar {
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+
         exclude("fabric.mod.json")
         archiveClassifier.set("dev-shadow")
         archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
