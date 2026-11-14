@@ -40,7 +40,7 @@ subprojects {
             create<MavenPublication>("mavenJava") {
                 artifact(tasks.getByName("remapJar"))
                 artifact(tasks.getByName("remapSourcesJar"))
-                groupId = "${group}.timcore"
+                groupId = "${group}.spawnnotification"
                 artifactId = project.name
 
                 pom {
